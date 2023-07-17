@@ -12,8 +12,11 @@ class EntrerpiseController extends AbstractController           // Permet d'acc�
     public function index(): Response                   
     {
         return $this->render('entrerpise/index.html.twig', [    // render() Permet de faire le lien entre le controller et la view
-            'controller_name' => 'Entrerpise Controller',        // Renvoi dans le dossier entreprise, dans le fichier index.html.twig
+            'controller_name' => 'Entrerpise Controller'        // Renvoi dans le dossier entreprise, dans le fichier index.html.twig
         ]);                                                     // 'controller_name' est un argument - 'EntrepriseController' est une valeur
     }           
 }               // Pour afficher cet argument dans une vue il faut créer un echo représenté par {{ }} dans le fichier index.html.twig du dossier entreprise
 //              Il faut également saisir le nom de la Route (à savoir /entreprise) dans l'URL du navigateur à la suite de http://127.0.0.1:8000 (lorsque celui-ci est activé)
+
+//              Avec cette méthode, il est également possible de faire passer une variable: $variable = 'Entreprise Controller';
+//                                                                                         'controller_name' => $variable
