@@ -10,20 +10,29 @@
 
     <h1>Liste des Entreprises</h1>
 
+    {# BDD L'élément de la collection #}
+
+    {% for entrerpise in entreprises %}
+        {{entrerpise}}<br>
+    {% endfor %}
+
     {# ///////////////////////////////////////////////////EXEMPLES POUR COMPRENDRE LE PRINCIPE///////////////////////////////////////////////////////////////////// #}
     
     {# Afficher la valeur de l'argument de EntrepriseController avec l'echo ci dessous 
     (Faire un echo de l'argument pour afficher la valeur de celui-ci dans une vue)#}
-    {{ controller_name }}<br>
+    
+        {# {{ controller_name }}<br> #}
 
     {# VAR Fonctionne aussi pour les variables #}
-    Bonjour {{ name }} !<br>
 
-    {# Pour afficher un tableau #}
-    {# Les boucles et le conditions doivent être entre {% %} #}
-    {% for element in tableau %}
-        {{ element }}<br>
-    {% endfor %}
+        {# Bonjour {{ name }} !<br> #}
+
+    {# TAB Pour afficher un tableau #}
+    {# TAB Les boucles et le conditions doivent être entre {% %} #}
+
+        {# {% for element in tableau %}
+            {{ element }}<br>
+        {% endfor %} #}
 
     {# /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// #}
     <style> 
