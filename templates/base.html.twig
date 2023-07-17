@@ -4,13 +4,18 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        
         {% block stylesheets %}
+            {# Insérer les fichiers CSS dans ce bloc #}
         {% endblock %}
 
         {% block javascripts %}
+            {# Insérer les fichiers JavaScript dans ce bloc #}
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            {# Mettre en place tout ce qui va changer d'une vue à l'autre #}
+        {% endblock %}
     </body>
 </html>
