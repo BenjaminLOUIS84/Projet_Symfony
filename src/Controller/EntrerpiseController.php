@@ -16,7 +16,7 @@ class EntrerpiseController extends AbstractController           // Permet d'accÃ
 
         return $this->render('entrerpise/index.html.twig', [    // render() Permet de faire le lien entre le controller et la view // Renvoi dans le dossier entreprise, dans le fichier index.html.twig
             
-            //'controller_name' => 'Entrerpise Controller',     // 'controller_name' est un argument - 'EntrepriseController' est une valeur
+            'controller_name' => 'Entrerpise Controller',       // 'controller_name' est un argument - 'EntrepriseController' est une valeur
             
             'name' => $name,                                    // CF VAR
             
