@@ -13,7 +13,9 @@
     {# BDD L'élément de la collection #}
 
     {% for entrerpise in entreprises %}
-        {{entrerpise}}<br>
+        {# BDD nom de l'objet . pour accéder à un attribu précis #}
+        {# BDD on utilise le nom de Entreprise.php dans Entity plutôt que celui de la BDD #}
+        {{entrerpise.raisonSociale}}<br>
     {% endfor %}
 
     {# ///////////////////////////////////////////////////EXEMPLES POUR COMPRENDRE LE PRINCIPE///////////////////////////////////////////////////////////////////// #}
