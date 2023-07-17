@@ -8,6 +8,8 @@ Dans le bios tapez php -v -->
 
 <!-- Télécharger et installer les outils suivant: Composer - Scoop.sh - Symfony CLI (CF Vidéo Symfony6 partie 1 ) -->
 
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
 <!-- 1 DEMARRER UN NOUVEAU PROJET ET AFFICHER SON ARBORESCENCE DANS VSC-->
 
 <!-- Créer un dossier dans Laragon ouvrir le dossier avec VSC et ouvrir la consôle
@@ -19,7 +21,7 @@ cls permet de rafraichir en supprimant l'historique
 code . permet de lancer une nouvelle instance du projet dans une nouvelle fenêtre
 ctrl + c permet de sortir d'un processus d'éxécution -->
 
-<!-- DESCRIPTIONS -->
+<!-- DESCRIPTIONS DES FICHIERS DU PROJET -->
 <!-- 
 src sera le dossier le plus sollicité on y retrouve la logique métier de l'application
 entities (pour peupler la BDD)
@@ -66,6 +68,15 @@ PS C:\laragon\www\symfony\Projet> symfony console doctrine:migrations:migrate (m
 <!-- 8 CREER LES CONTROLLEURS -->
 
 <!-- Dans la consôle: PS C:\laragon\www\symfony\Projet> symfony console make:controller: NomDuController (Ici EntrepriseControlleur) -->
+<!-- Supprimer les élément généré automatiquement la balise <style> pour le CSS et la <div> dans les fichiers index.html.twig -->
+<!-- Privilégier la méthode conventionnelle avec un fichier à part pour le CSS et personnaliser soi même les contenus -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- EXTENSIONS A INSTALLER -->
+<!-- 
+Twig Pack (plutôt que Twig Language 2)
+ -->
 
 <!-- COMMANDES SYMFONY -->
 <!-- 

@@ -1,8 +1,14 @@
 <!DOCTYPE html>
+
+{# Ce fichier équivaut au layout.php il représente la ligne directrice en matière d'affichage pour toutes les autres vues #}
+
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        
+        {# La valeur X du bloc titre ci dessous doit correspondre aux titres des différente pages, le X sera une variable  #}
+
+        <title>{% block title %}X{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         
         {% block stylesheets %}
