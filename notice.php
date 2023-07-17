@@ -71,6 +71,8 @@ PS C:\laragon\www\symfony\Projet> symfony console doctrine:migrations:migrate (m
 <!-- Supprimer les élément généré automatiquement la balise <style> pour le CSS et la <div> dans les fichiers index.html.twig -->
 <!-- Privilégier la méthode conventionnelle avec un fichier à part pour le CSS et personnaliser soi même les contenus -->
 
+<!-- Méthodes pour afficher la valeur de l'argument d'un controlleur dans une vue CF VAR-->
+
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <!-- EXTENSIONS A INSTALLER -->
