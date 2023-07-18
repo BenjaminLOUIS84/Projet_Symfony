@@ -11,8 +11,7 @@
     {# Pour récupérer la raison sociale à l'affichage (CF __toString() dans le fichier Entreprise.php) #}
     <h2>{{ employe }}</h2>
     <p>
-        Date et lieu de naissance : {{ employe.dateNaissance }}  {{ employe.ville }}
-        Entreprise : {{ entreprise.raisonSociale }}
+        Commune de naissance : {{ employe.ville }}
     </p>
 
 {% endblock %}
