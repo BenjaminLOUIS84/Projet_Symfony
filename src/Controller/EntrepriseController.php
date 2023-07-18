@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Doctrine\ORM\EntityManagerInterface;                        // BDD Obtenue grâce au click droit import class
 
-class EntrerpiseController extends AbstractController           // Permet d'accéder à des méthodes pré-établies dans l'AbstractController
+class EntrepriseController extends AbstractController           // Permet d'accéder à des méthodes pré-établies dans l'AbstractController
 {                                                        
     #[Route('/entreprise', name: 'app_entreprise')]             // Route représentant l'URL pour la redirection Veiller à ce que tout les name: soient différents
     public function index(EntityManagerInterface $entityManager): Response                   
