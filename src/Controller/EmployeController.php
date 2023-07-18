@@ -15,12 +15,15 @@ class EmployeController extends AbstractController
     public function index(EmployeRepository $employeRepository): Response
     {
 
-        $employes = $employeRepository->findAll();
+        // $employes = $employeRepository->findAll();
+
+        // Pour afficher la liste classer par ordre alphabéthique selon le nom
+        $employes = $employeRepository->findBy([], ["nom" => "ASC"]); 
 
         return $this->render('employe/index.html.twig', [
 
             'employes' => $employes
-            
+
         ]);
     }
 }

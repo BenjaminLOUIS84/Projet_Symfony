@@ -23,7 +23,8 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
 
         // $entreprises = $entityManager->getRepository(Entreprise::class)->findAll();  // CF BDD Récupérer la liste de toute les entreprises
         
-        $entreprises = $entrepriseRepository->findAll();          // CF ASTUCE Récupérer la liste de toute les entreprises
+        // $entreprises = $entrepriseRepository->findAll();          // CF ASTUCE Récupérer la liste de toute les entreprises
+        $entreprises = $entrepriseRepository->findBy([], ["raisonSociale" => "ASC"]); // Pour afficher la liste classer par ordre alphabéthique selon la raison sociale
 
         return $this->render('entreprise/index.html.twig', [      // render() Permet de faire le lien entre le controller et la view // Renvoi dans le dossier entreprise, dans le fichier index.html.twig
             
