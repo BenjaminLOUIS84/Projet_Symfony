@@ -100,7 +100,7 @@ class Employe
     ////////////////////////////////////////On peut ajouter d'autres fonctions ici//////////////////////// 
     public function __toString() {                  // Pour faciliter l'affichage des autres informations d'une entité
         return $this->nom. " " .$this->prenom. " "; // Les éléments affichés de la liste des employés sont le nom et le prénom
-    }
+    }                                               // Permet d'afficher le nom et le prénom de le détail d'un employé ET AUSSI d'une entreprise
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     
     public function getVille(): ?string
