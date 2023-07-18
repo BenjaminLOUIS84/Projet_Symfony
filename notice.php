@@ -105,6 +105,7 @@ il suffit de copier/coller le name dans le path  {{ path ('app_entreprise') }}  
 
 <!-- Dans la console reprendre la commande PS C:\laragon\www\symfony\Projet> symfony console make:entity Nom de l'entité à modifier
 Ajouter la propriété ville en suivant le procesus de création, vérifier dans le fichier Employe.php si les getter et setter sont ajoutés
+
 ATTENTION Faire la migration pour mettre à jour la BDD risque de supprimer le peuplage de la table
 donc il faut dans la console mettre la commande suivante [symfony console doctrine:schema:update --force (ou d:s:u --force)]-->
 
@@ -126,7 +127,10 @@ En effet il est suffisant car PARAM CONVERTER, un outil de Symfony permet de ré
 et copier/coller la structure fichier index.html.twig dans la nouvelle vue CF show.html.twig -->
 
 <!-- Créer et placer le lien {{ path ('show_entreprise') }} dans le href=" " du fichier index.html.twig du dossier entreprise
-pour établir la connexion entre le controllerEntreprise et la view show.html.twig -->
+pour établir la connexion entre le controllerEntreprise et la view show.html.twig 
+
+ATTENTION Il faut aussi ajouter le paramêtre de l'URL {id} soit {id: entreprise.id} pour bien récupérer l'objet entreprise de l'identidfiant
+Ainsi la connexion sera fonctionnelle-->
 
 
 

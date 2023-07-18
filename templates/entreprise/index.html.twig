@@ -24,8 +24,10 @@
 
             {# Grâce à la fonction __toString() crée dans Entreprise.php de Entity, la ligne ci dessous remplace la ligne ci dessus #}
 
-            {# Pour rendre les éléments de la liste cliquable il suffit de mettre ceux-ci dans une balise a et placer lien {{ path ('show_entreprise') }} dans le href #}
-        <a href="{{ path ('show_entreprise') }}">{{ entreprise }}</a><br>
+            {# Pour rendre les éléments de la liste cliquable il suffit de mettre ceux-ci dans une balise a, placer lien {{ path ('show_entreprise') }} dans le href  
+            et ajouter l'ID pour récupérer l'objet entreprise #}
+            
+        <a href="{{ path ('show_entreprise', {id: entreprise.id}) }}">{{ entreprise }}</a><br>
 
     {% endfor %}
 
