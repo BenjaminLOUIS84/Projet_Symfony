@@ -119,6 +119,12 @@ afin de limiter l'affichage au noms et prénoms)-->
 <!-- Dans les controlleurs il faut créer une nouvelle méthode fonction show() pour afficher le détail,
 ensuite il faut reprendre la route en ajoutant /{id} à l'URL et en changeant le nom du name -->
 
+<!-- {id} Sert de clé primaire pour récupérer l'objet et pas besoin de le renommer autrement.
+En effet il est suffisant car PARAM CONVERTER, un outil de Symfony permet de récupérer par déduction l'objet en question -->
+
+<!-- Créer la view show.html.twig dans le dossier entreprise qui reçoit le détail de l'entreprise à afficher
+et copier/coller la structure fichier index.html.twig dans la nouvelle vue
+
 
 
 
