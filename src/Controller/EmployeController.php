@@ -16,8 +16,11 @@ class EmployeController extends AbstractController
     {
 
         $employes = $employeRepository->findAll();
+
         return $this->render('employe/index.html.twig', [
+
             'employes' => $employes
+            
         ]);
     }
 }

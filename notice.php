@@ -76,16 +76,20 @@ PS C:\laragon\www\symfony\Projet> symfony console doctrine:migrations:migrate (m
 <!-- Méthodes pour afficher la valeur de l'argument d'un controlleur dans une vue CF VAR -->
 
 <!-- Peupler manuellement la BDD pour tester la méthode ci dessous -->
-<!-- Méthode pour afficher les valeurs issues de la BDD Liste des entreprises et des employés CF BDD -->
+<!-- Méthode pour afficher les valeurs issues de la BDD avec findAll() la liste des entreprises et des employés CF BDD -->
+
 <!-- Les conditions if et les boucles for sont toujours entre {% %} dans un fichier twig -->
 <!-- Pour concaténer dans un fichier twig on utilise le ~ à la place du . 
 {{ entreprise.raisonSociale ~ ' (' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} -->
 
 <!-- Autre méthode en créeant une fonction __toString() dans le fichier Entreprise.php du dossier Entity
-Cela permet de convertir n'importe quel typr de données en chaîne de caractère et cela simplifie le code  -->
+Cela permet de convertir en chaîne de caractère et cela simplifie le code  -->
 
 <!-- Autre méthode pour simplifier le code, il faut mettre dans l'index du contrôlleur EntrepriseRepository $entrepriseRepository
 à la place de EntityManagerInterface $entityManager et importer cette classe dans EntrepriseController CF ASTUCE -->
+
+<!-- Utiliser les filtre pour afficher par ordre alphabétique avec la fonction findBy()-->
+
 
 
 
