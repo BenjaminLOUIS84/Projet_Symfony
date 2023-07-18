@@ -20,8 +20,18 @@
         {% endblock %}
     </head>
     <body>
+        {# Créer une barre de navigation pour basculer d'une page (Liste des entreprises) à l'autre (Liste des employés) #}
+        <nav>
+            <ul>
+                <li><a href="{{ path ('app_entreprise') }}">Liste des entreprises</a></li>
+                <li><a href="{{ path ('app_employe') }}">Liste des employés</a></li>
+            </ul>
+        </nav>
+
         {% block body %}
             {# Mettre en place tout ce qui va changer d'une vue à l'autre #}
         {% endblock %}
+
+
     </body>
 </html>

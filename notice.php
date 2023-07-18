@@ -97,7 +97,9 @@ Cela permet de convertir en chaîne de caractère et cela simplifie le code  -->
 <!-- Pour afficher la liste des employés de l'entrprise DEV COOK   
 (ajouter dans la boucle du fichier twig {{ employe.entreprise.raisonSociale }})-->
 
-<!-- Créer une barre de navigation pour basculer d'une liste à l'autre dans le fichier twig base -->
+<!-- Créer une barre de navigation pour basculer d'une liste à l'autre dans le fichier twig base
+Le lien de navigation se fait avec {{ path ('') }} et le name dans le controlleur,
+il suffit de copier/coller le name dans le path  {{ path ('app_entreprise') }}  -->
 
 
 

@@ -12,7 +12,8 @@ use Doctrine\ORM\EntityManagerInterface;                        // BDD Obtenue g
 class EntrepriseController extends AbstractController           // Permet d'accéder à des méthodes pré-établies dans l'AbstractController
 {                                                        
     #[Route('/entreprise', name: 'app_entreprise')]             // Route représentant l'URL pour la redirection Veiller à ce que tout les name: soient différents
-    
+    //                                                             Le name: sert pour la navigation
+
     // public function index(EntityManagerInterface $entityManager): Response   // BDD EntityManagerInterface $entityManager à renseigner dans la fonction index()
     //                                                                             BDD Clique droit->Import class pour importer cette classe dans le contrôlleur
     public function index(EntrepriseRepository $entrepriseRepository): Response // ASTUCE 
