@@ -20,7 +20,11 @@
 
         {# Voici comment concaténer en twig pour afficher les autres informations (la balise b permet d'afficher en gras) #}
 
-        <b>{{ entreprise.raisonSociale }}</b> {{'(' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} <br>
+        {# <b>{{ entreprise.raisonSociale }}</b> {{'(' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} <br> #}
+
+            {# Grâce à la fonction __toString() crée dans Entreprise.php de Entity, la ligne ci dessous remplace la ligne ci dessus #}
+            
+        {{ entreprise }} <br>
 
     {% endfor %}
 

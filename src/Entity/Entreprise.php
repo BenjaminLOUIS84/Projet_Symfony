@@ -112,7 +112,7 @@ class Entreprise
         return $this->employes;
     }
 
-    public function addEmploye(Employe $employe): static
+    public function addEmploye(Employe $employe): static // Pour ajouter un employé
     {
         if (!$this->employes->contains($employe)) {
             $this->employes->add($employe);
@@ -122,7 +122,7 @@ class Entreprise
         return $this;
     }
 
-    public function removeEmploye(Employe $employe): static
+    public function removeEmploye(Employe $employe): static // Pour supprimer un employé
     {
         if ($this->employes->removeElement($employe)) {
             // set the owning side to null (unless already changed)
@@ -132,5 +132,12 @@ class Entreprise
         }
 
         return $this;
+    }
+
+    // Il est possible de créer d'autres fonctions ici
+
+    public function __toString() { // Pour faciliter l'affichage des autres informations d'une entité, permet également de convertir n'importe quel type de données en chaîne de caractère
+
+        return $this->raisonSociale. " (".$this->cp." ".$this->ville.")";
     }
 }
