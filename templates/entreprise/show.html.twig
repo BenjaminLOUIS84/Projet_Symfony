@@ -11,7 +11,7 @@
     {# Pour récupérer la raison sociale à l'affichage (CF __toString() dans le fichier Entreprise.php) #}
     <h2>{{ entreprise }}</h2>
     <p>
-        Adresse : {{ entreprise.adresse }}
+        Adresse : {{ entreprise.adresse }} {{ entreprise.cp }} {{ entreprise.ville }}
     </p>
 
 {% endblock %}

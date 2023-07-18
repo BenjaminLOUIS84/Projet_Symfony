@@ -111,7 +111,7 @@ donc il faut dans la console mettre la commande suivante [symfony console doctri
 
 <!-- 10 AFFICHER LE DETAIL D'UNE ENTREPRISE ET D'UN EMPLOYE -->
 
-<!-- Rendre les éléments de la liste clickable, on click sur une entreprise pour afficher toutes les infos de celle-ci ainsi que ses employés -->
+<!-- Rendre les éléments de la liste cliquable, on click sur une entreprise pour afficher toutes les infos de celle-ci ainsi que ses employés -->
 <!-- Pour cela, il faut mettre en place des liens dans le fichier twig du dossier entreprise (au passage je limite l'affichage des éléments ce cette liste
 à la raison sociale dans le fichier Entreprise.ph)
 (Pour la liste des employés, il suffit de supprimer {{ employe.entreprise.raisonSociale }} dans le fichier twig du dossier employe
