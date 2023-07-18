@@ -81,6 +81,8 @@ PS C:\laragon\www\symfony\Projet> symfony console doctrine:migrations:migrate (m
 <!-- Pour concaténer dans un fichier twig on utilise le ~ à la place du . 
 {{ entreprise.raisonSociale ~ ' (' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} -->
 
+<!-- Autre méthode en créeant une fonction __toString() dans le fichier Entreprise.php du dossier Entity -->
+
 
 
 
