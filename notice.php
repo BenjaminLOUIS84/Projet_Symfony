@@ -16,7 +16,9 @@ Dans le bios tapez php -v -->
 Veiller à avoir le bon chemin PS C:\laragon\www\symfony\Projet> pour éxécuter la commande ci-dessous 
 Taper dans la consôle après le > symfony new NomDuProjet -- webapp (pour générer le projet-->
 
-<!-- Astuces pour utiliser la consôle efficacement : 
+<!-- Astuces pour utiliser la consôle efficacement :
+cd Projet permet de changer la direction du chemin d'accès PS C:\laragon\www\symfony> ... ajouter le fichier suivant et afficher PS C:\laragon\www\symfony\Projet>
+cd .. permmet de changer la direction du chemin d'accès PS C:\laragon\www\symfony> supprimer le fichier symfony et afficher PS C:\laragon\www>
 cls permet de rafraichir en supprimant l'historique
 code . permet de lancer une nouvelle instance du projet dans une nouvelle fenêtre
 ctrl + c permet de sortir d'un processus d'éxécution -->
@@ -74,6 +76,18 @@ PS C:\laragon\www\symfony\Projet> symfony console doctrine:migrations:migrate (m
 <!-- Méthodes pour afficher la valeur de l'argument d'un controlleur dans une vue CF VAR -->
 <!-- Peupler manuellement la BDD pour tester la méthode ci dessous -->
 <!-- Méthode pour afficher les valeurs issues de la BDD Liste des entreprises et des employés -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
 

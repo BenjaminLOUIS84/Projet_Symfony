@@ -4,6 +4,12 @@
 
 {% block title %}Liste des employés{% endblock %}
 
+<h1>Liste des Entreprises</h1>
+
+    {% for employe in employes %}
+        {{employe.prenom}}<br>
+    {% endfor %}
+
 {% block body %}
 
 {% endblock %}
