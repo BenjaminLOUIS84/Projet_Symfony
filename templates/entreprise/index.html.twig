@@ -12,15 +12,15 @@
 
     {# BDD L'élément de la collection #}
     {# Créer une boucle for #}
-    {% for entreprise in entreprises %}
+    {% for entrerpise in entreprises %}
 
         {# BDD nom de l'objet . pour accéder à un attribu précis #}
         {# BDD on utilise le nom de Entreprise.php dans Entity plutôt que celui de la BDD #}
-        {# {{entreprise.raisonSociale}}<br> #}
+        {# {{entrerpise.raisonSociale}}<br> #}
 
         {# Voici comment concaténer en twig pour afficher les autres informations #}
 
-        {{ entreprise.raisonSociale ~ '(' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} <br>
+        {{ entrerpise.raisonSociale ~ '(' ~ entrerpise.cp ~ ' ' ~ entrerpise.ville ~ ')'}} <br>
 
     {% endfor %}
 
