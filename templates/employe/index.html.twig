@@ -13,7 +13,7 @@
         {# {{ employe }}  {{ employe.entreprise.raisonSociale }} <br> #}
 
         {# Pour juste afficher le nom et le prénom de la liste des employés et rendre ces éléments clickables #}
-        <a href="">{{ employe }}</a><br>
+        <a href="{{ path ('show_employe', {id: employe.id}) }}">{{ employe }}</a><br>
 
     {% endfor %}
 
