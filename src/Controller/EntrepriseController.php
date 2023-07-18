@@ -19,14 +19,16 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
     public function index(EntrepriseRepository $entrepriseRepository): Response // ASTUCE 
 
     {                                                          
-        //$name = 'Elan Formation';                               // CF VAR
-        //$tableau = ["valeur1", "valeur2"];                      // Pour afficher un tableau il faut faire une boucle TAB
+        // $name = 'Elan Formation';                               // CF VAR
+        // $tableau = ["valeur1", "valeur2"];                      // Pour afficher un tableau il faut faire une boucle TAB
 
         // $entreprises = $entityManager->getRepository(Entreprise::class)->findAll();  // CF BDD Récupérer la liste de toute les entreprises
         
-        // $entreprises = $entrepriseRepository->findAll();          // CF ASTUCE Récupérer la liste de toute les entreprises
+        // $entreprises = $entrepriseRepository->findAll();        // CF ASTUCE Récupérer la liste de toute les entreprises
         // $entreprises = $entrepriseRepository->findBy([], ["raisonSociale" => "ASC"]); // Pour afficher la liste de toute les entreprises classées par ordre alphabéthique selon la raison sociale
-        $entreprises = $entrepriseRepository->findBy(["ville" => "Strasbourg"], ["raisonSociale" => "ASC"]); // Pour afficher la liste des entreprises de Strasbourg classée par ordre alphabéthique selon la raison sociale
+        // $entreprises = $entrepriseRepository->findBy(["ville" => "Strasbourg"], ["raisonSociale" => "ASC"]); // Pour afficher la liste des entreprises de Strasbourg classée par ordre alphabéthique selon la raison sociale
+        
+        $entreprises = $entrepriseRepository->findBy([], ["raisonSociale" => "ASC"]); // Pour afficher la liste des entreprises de Strasbourg classée par ordre alphabéthique selon la raison sociale
 
         return $this->render('entreprise/index.html.twig', [      // render() Permet de faire le lien entre le controller et la view // Renvoi dans le dossier entreprise, dans le fichier index.html.twig
             
@@ -34,15 +36,28 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
             // 'name' => $name,                                   // CF VAR
             // 'tableau' => $tableau,                             // CF TAB
 
-            'entreprises' => $entreprises                       // CF BDD
+            'entreprises' => $entreprises                         // CF BDD
 
         ]);                                                     
     }  
 
-}               // Pour afficher cet argument dans une vue il faut créer un echo représenté par {{ }} dans le fichier index.html.twig du dossier entreprise
-//              Il faut également saisir le nom de la Route (à savoir /entreprise) dans l'URL du navigateur à la suite de http://127.0.0.1:8000 (lorsque celui-ci est activé)
+    // Pour afficher cet argument dans une vue il faut créer un echo représenté par {{ }} dans le fichier index.html.twig du dossier entreprise
+    //              Il faut également saisir le nom de la Route (à savoir /entreprise) dans l'URL du navigateur à la suite de http://127.0.0.1:8000 (lorsque celui-ci est activé)
 
-//              VAR Avec cette méthode, il est également possible de faire passer une variable: $variable = 'Entreprise Controller';
-//                                                                                                   'controller_name' => $variable
+    //              VAR Avec cette méthode, il est également possible de faire passer une variable: $variable = 'Entreprise Controller';
+    //                                                                                                   'controller_name' => $variable
 
-//              BDD Afficher les valeurs de la base de données à savoir la liste des entreprises et des employés (doctrine fait le lien entre la BDD et le projet)
+    //              BDD Afficher les valeurs de la base de données à savoir la liste des entreprises et des employés (doctrine fait le lien entre la BDD et le projet)
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // FONCTION POUR AFFICHER LE DETAIL D'UNE ENTREPRISE
+
+    #[Route('/entreprise/{id}', name: 'show_entreprise')]       // Reprendre la route en ajoutant /{id} à l'URL et en changeant le nom du name
+
+    public function show(): Reponse                             // Créer une fonction show() dans le controller pour afficher le détail d'une entreprise 
+
+    {
+
+    }
+
+}

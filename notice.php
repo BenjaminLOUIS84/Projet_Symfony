@@ -108,6 +108,16 @@ Ajouter la propriété ville en suivant le procesus de création, vérifier dans
 ATTENTION Faire la migration pour mettre à jour la BDD risque de supprimer le peuplage de la table
 donc il faut dans la console mettre la commande suivante [symfony console doctrine:schema:update --force (ou d:s:u --force)]-->
 
+<!-- 10 AFFICHER LE DETAIL D'UNE ENTREPRISE ET D'UN EMPLOYE -->
+
+<!-- Rendre les éléments de la liste clickable, on click sur une entreprise pour afficher toutes les infos de celle-ci ainsi que ses employés -->
+<!-- Pour cela, il faut mettre en place des liens dans le fichier twig du dossier entreprise (au passage je limite l'affichage des éléments ce cette liste
+à la raison sociale dans le fichier Entreprise.ph)
+(Pour la liste des employés, il suffit de supprimer {{ employe.entreprise.raisonSociale }} dans le fichier twig du dossier employe
+afin de limiter l'affichage au noms et prénoms)-->
+
+<!-- Dans les controlleurs il faut créer une nouvelle méthode fonction show() pour afficher le détail,
+ensuite il faut reprendre la route en ajoutant /{id} à l'URL et en changeant le nom du name -->
 
 
 
