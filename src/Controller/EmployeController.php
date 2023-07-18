@@ -32,10 +32,10 @@ class EmployeController extends AbstractController
 
     #[Route('/employe/{id}', name: 'show_employe')]       // Reprendre la route en ajoutant /{id} à l'URL et en changeant le nom du name
 
-    public function show(Employe $employe): Response       // Créer une fonction show() dans le controller pour afficher le détail d'un employé 
+    public function show(Employe $employe): Response      // Créer une fonction show() dans le controller pour afficher le détail d'un employé 
 
     {
-        return $this->render('employe/show.html.twig', [     // Pour faire le lien entre le controller et la vue show.html.twig (il faut donc la créer dans le dossier employe)
+        return $this->render('employe/show.html.twig', [  // Pour faire le lien entre le controller et la vue show.html.twig (il faut donc la créer dans le dossier employe)
             'employe' => $employe
         ]);
     }
