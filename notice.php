@@ -123,7 +123,13 @@ ensuite il faut reprendre la route en ajoutant /{id} à l'URL et en changeant le
 En effet il est suffisant car PARAM CONVERTER, un outil de Symfony permet de récupérer par déduction l'objet en question -->
 
 <!-- Créer la view show.html.twig dans le dossier entreprise qui reçoit le détail de l'entreprise à afficher
-et copier/coller la structure fichier index.html.twig dans la nouvelle vue
+et copier/coller la structure fichier index.html.twig dans la nouvelle vue CF show.html.twig -->
+
+<!-- Créer et placer le lien {{ path ('show_entreprise') }} dans le href=" " du fichier index.html.twig du dossier entreprise
+pour établir la connexion entre le controllerEntreprise et la view show.html.twig -->
+
+
+
 
 
 

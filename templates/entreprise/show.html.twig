@@ -8,4 +8,10 @@
 
     <h1>Détail de l'entreprise</h1>
 
+    {# Pour récupérer la raison sociale à l'affichage (CF __toString() dans le fichier Entreprise.php) #}
+    <h2>{{ entreprise }}</h2>
+    <p>
+        Adresse : {{ entreprise.adresse }}
+    </p>
+
 {% endblock %}
