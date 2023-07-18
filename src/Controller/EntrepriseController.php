@@ -54,7 +54,7 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
 
     #[Route('/entreprise/{id}', name: 'show_entreprise')]       // Reprendre la route en ajoutant /{id} à l'URL et en changeant le nom du name
 
-    public function show(Entreprise $entreprise): Reponse       // Créer une fonction show() dans le controller pour afficher le détail d'une entreprise 
+    public function show(Entreprise $entreprise): Response       // Créer une fonction show() dans le controller pour afficher le détail d'une entreprise 
 
     {
         return $this->render('entreprise/show.html.twig', [     // Pour faire le lien entre le controller et la vue show.html.twig (il faut donc la créer dans le dossier entreprise)
