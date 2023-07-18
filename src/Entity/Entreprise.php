@@ -145,7 +145,7 @@ class Entreprise
     ////////////////////////////////////////////////////////////////////////
     // Il est possible de créer d'autres fonctions ici
 
-    public function __toString() { // Pour faciliter l'affichage des autres informations d'une entité, permet également de convertir n'importe quel type de données en chaîne de caractère
+    public function __toString() { // Pour faciliter l'affichage des autres informations d'une entité
 
         //return $this->raisonSociale. " (".$this->cp." ".$this->ville.")"; // Les éléments affichés de la liste des entreprises sont la raison sociale, le cp et la ville
         return $this->raisonSociale. " "; // L'élément affiché de la liste des entreprises est seulement la raison sociale

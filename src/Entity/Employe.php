@@ -98,8 +98,8 @@ class Employe
         return $this;
     }
     ////////////////////////////////////////On peut ajouter d'autres fonctions ici//////////////////////// 
-    public function __toString() { 
-        return $this->nom. " " .$this->prenom. " ";
+    public function __toString() {                  // Pour faciliter l'affichage des autres informations d'une entité
+        return $this->nom. " " .$this->prenom. " "; // Les éléments affichés de la liste des employés sont le nom et le prénom
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     
