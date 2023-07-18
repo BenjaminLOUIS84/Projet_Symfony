@@ -91,6 +91,9 @@ Cela permet de convertir en chaîne de caractère et cela simplifie le code  -->
 <!-- Utiliser les filtre pour afficher par ordre alphabétique avec la fonction findBy() 
 (remplacer la fonction findAll() dans le controlleur)-->
 
+<!-- Utiliser les filtre pour afficher les entrprises de Strasbourg avec la fonction findBy() 
+(remplir le tableau vide [] de la fonction findBy() dans le controlleur)-->
+
 
 
 
