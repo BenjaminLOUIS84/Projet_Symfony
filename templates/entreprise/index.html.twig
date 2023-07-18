@@ -18,9 +18,9 @@
         {# BDD on utilise le nom de Entreprise.php dans Entity plutôt que celui de la BDD #}
         {# {{entrerpise.raisonSociale}}<br> #}
 
-        {# Voici comment concaténer en twig pour afficher les autres informations #}
+        {# Voici comment concaténer en twig pour afficher les autres informations (la balise b permet d'afficher en gras) #}
 
-        {{ entreprise.raisonSociale ~ '(' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} <br>
+        <b>{{ entreprise.raisonSociale }}</b> {{'(' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} <br>
 
     {% endfor %}
 
