@@ -9,7 +9,8 @@
     <h1>Liste des Employés</h1>
 
     {% for employe in employes %}
-        {{ employe }}<br>
+    {# Pour afficher la liste des employés de l'entreprise DEV COOK il suffit de rajouter {{ employe.entreprise.raisonSociale }} #}
+        {{ employe }}  {{ employe.entreprise.raisonSociale }} <br>
 
     {% endfor %}
 
