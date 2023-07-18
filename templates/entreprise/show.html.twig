@@ -11,7 +11,18 @@
     {# Pour récupérer la raison sociale à l'affichage (CF __toString() dans le fichier Entreprise.php) #}
     <h2>{{ entreprise }}</h2>
     <p>
-        Adresse : {{ entreprise.adresse }} {{ entreprise.cp }} {{ entreprise.ville }}
+        {# Adresse : {{ entreprise.adresse }} {{ entreprise.cp }} {{ entreprise.ville }} #}
+
+        {# OU Faire appel à la fonction getAdresseComplete() crée dans le fichier Entreprise.php #}
+
+        Adresse : {{ entreprise.adresseComplete }}<br>
+
+        {# Faire appel à la fonction getDateCreationFr() crée dans le fichier Entreprise.php #}
+        {# Date de creation : {{ entreprise.dateCreationFr }} #}
+
+        {# OU mettre un filtre directement dans le fichier twig #}
+        Date de création : {{ entreprise.dateCreation|date("d-m-Y")}}
+
     </p>
 
 {% endblock %}

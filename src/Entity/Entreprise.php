@@ -61,6 +61,15 @@ class Entreprise
         return $this->dateCreation;
     }
 
+    ////////////////////////////////////////////////////////////////////////
+    // Créer une fonction pour formater la date
+
+    // public function getDateCreationFr(): ?string
+    // {
+    //     return $this->dateCreation->format("d-m-Y");
+    // }
+    ////////////////////////////////////////////////////////////////////////
+
     public function setDateCreation(\DateTimeInterface $dateCreation): static
     {
         $this->dateCreation = $dateCreation;
@@ -133,7 +142,7 @@ class Entreprise
 
         return $this;
     }
-
+    ////////////////////////////////////////////////////////////////////////
     // Il est possible de créer d'autres fonctions ici
 
     public function __toString() { // Pour faciliter l'affichage des autres informations d'une entité, permet également de convertir n'importe quel type de données en chaîne de caractère
@@ -141,4 +150,12 @@ class Entreprise
         //return $this->raisonSociale. " (".$this->cp." ".$this->ville.")"; // Les éléments affichés de la liste des entreprises sont la raison sociale, le cp et la ville
         return $this->raisonSociale. " "; // L'élément affiché de la liste des entreprises est seulement la raison sociale
     }
+    ////////////////////////////////////////////////////////////////////////
+    // Créer un fonction pour afficher l'adresse complète afin de pouvoir la réutiliser et d'alléger le code dans le fichier show.html.twig
+
+    public function getAdresseComplete(): string
+    {
+       return  $this->adresse. " " .$this->cp. " " .$this->ville; 
+    }
+    ////////////////////////////////////////////////////////////////////////
 }

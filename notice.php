@@ -132,7 +132,17 @@ pour établir la connexion entre le controllerEntreprise et la view show.html.tw
 ATTENTION Il faut aussi ajouter le paramêtre de l'URL {id} soit {id: entreprise.id} pour bien récupérer l'objet entreprise de l'identidfiant
 Ainsi la connexion sera fonctionnelle-->
 
+<!-- Procéder ainsi pour la partie concernant les employés -->
 
+<!-- Créer une fonction getAdresseComplete() dans le fichier Entreprise.php pour simplifier le code du fichier show.html.twig du dossier Entreprise --> 
+
+<!-- Formater les datetimes pour les convertir en string et par conséquent afficher celle-ci dans le détail des entreprises et des employés
+Pour cela, 
+soit dans le fichier Entreprise.php dans le getDateCreation faire un format->("d-m-Y") et modifier le type en string (mais c'est pas conseillé); 
+soit dans ce même fichier créer une méthode getDateCreationFr en reprenant les instructions ci dessus 
+soit directement dans le fichier twig avec le filtre |date ("d-m-Y") -->
+
+<!-- Il existe de nombreux filtres à utiliser dans twig! CF twig.symfony.com-->
 
 
 
