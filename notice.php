@@ -81,7 +81,11 @@ PS C:\laragon\www\symfony\Projet> symfony console doctrine:migrations:migrate (m
 <!-- Pour concaténer dans un fichier twig on utilise le ~ à la place du . 
 {{ entreprise.raisonSociale ~ ' (' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} -->
 
-<!-- Autre méthode en créeant une fonction __toString() dans le fichier Entreprise.php du dossier Entity -->
+<!-- Autre méthode en créeant une fonction __toString() dans le fichier Entreprise.php du dossier Entity
+Cela permet de convertir n'importe quel typr de données en chaîne de caractère et cela simplifie le code  -->
+
+<!-- Autre méthode pour simplifier le code, il faut mettre dans l'index du contrôlleur EntrepriseRepository $entrepriseRepository
+à la place de EntityManagerInterface $entityManager et importer cette classe dans EntrepriseController CF ASTUCE -->
 
 
 
