@@ -101,6 +101,13 @@ Cela permet de convertir en chaîne de caractère et cela simplifie le code  -->
 Le lien de navigation se fait avec le chemin d'accès {{ path ('') }} et le name dans le controlleur,
 il suffit de copier/coller le name dans le path  {{ path ('app_entreprise') }}  -->
 
+<!-- 9 METTRE A JOUR UNE ENTITE -->
+
+<!-- Dans la console reprendre la commande PS C:\laragon\www\symfony\Projet> symfony console make:entity Nom de l'entité à modifier
+Ajouter la propriété ville en suivant le procesus de création, vérifier dans le fichier Employe.php si les getter et setter sont ajoutés
+ATTENTION Faire la migration pour mettre à jour la BDD risque de supprimer le peuplage de la table
+donc il faut dans la console mettre la commande suivante [symfony console doctrine:schema:update --force (ou d:s:u --force)]-->
+
 
 
 
