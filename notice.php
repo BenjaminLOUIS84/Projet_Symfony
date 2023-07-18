@@ -70,12 +70,15 @@ PS C:\laragon\www\symfony\Projet> symfony console doctrine:migrations:migrate (m
 <!-- 8 CREER LES CONTROLLEURS -->
 
 <!-- Dans la consôle: PS C:\laragon\www\symfony\Projet> symfony console make:controller: NomDuController (Ici EntrepriseControlleur) -->
-<!-- Supprimer les élément généré automatiquement la balise <style> pour le CSS et la <div> dans les fichiers index.html.twig -->
-<!-- Privilégier la méthode conventionnelle avec un fichier à part pour le CSS et personnaliser soi même les contenus -->
+<!-- Supprimer les éléments générés automatiquement la balise <style> pour le CSS et la <div> dans les fichiers index.html.twig -->
+<!-- Privilégier la méthode conventionnelle avec un fichier à part pour le CSS et personnaliser soi-même les contenus -->
 
 <!-- Méthodes pour afficher la valeur de l'argument d'un controlleur dans une vue CF VAR -->
+
 <!-- Peupler manuellement la BDD pour tester la méthode ci dessous -->
-<!-- Méthode pour afficher les valeurs issues de la BDD Liste des entreprises et des employés -->
+<!-- Méthode pour afficher les valeurs issues de la BDD Liste des entreprises et des employés CF BDD -->
+<!-- Les conditions if et les boucles for sont toujours entre {% %} dans un fichier twig -->
+<!-- Pour concaténer dans un fichier twig on utilise le ~ à la place du . -->
 
 
 
@@ -94,7 +97,7 @@ PS C:\laragon\www\symfony\Projet> symfony console doctrine:migrations:migrate (m
 <!-- EXTENSIONS A INSTALLER -->
 <!-- 
 Twig Pack (plutôt que Twig Language 2)
-PHP NameSpace pour importer des classes avec le cliqk droit
+PHP NameSpace pour importer des classes avec le click droit
  -->
 
 <!-- COMMANDES SYMFONY -->

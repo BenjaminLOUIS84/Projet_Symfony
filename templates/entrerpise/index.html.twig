@@ -11,11 +11,16 @@
     <h1>Liste des Entreprises</h1>
 
     {# BDD L'élément de la collection #}
-
+    {# Créer une boucle for #}
     {% for entrerpise in entreprises %}
+
         {# BDD nom de l'objet . pour accéder à un attribu précis #}
         {# BDD on utilise le nom de Entreprise.php dans Entity plutôt que celui de la BDD #}
+        {# {{entrerpise.raisonSociale}}<br> #}
+
+        {# Voici comment concaténer en twig pour afficher les autres informations #}
         {{entrerpise.raisonSociale}}<br>
+
     {% endfor %}
 
     {# ///////////////////////////////////////////////////EXEMPLES POUR COMPRENDRE LE PRINCIPE///////////////////////////////////////////////////////////////////// #}
