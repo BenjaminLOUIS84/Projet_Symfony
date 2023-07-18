@@ -78,7 +78,8 @@ PS C:\laragon\www\symfony\Projet> symfony console doctrine:migrations:migrate (m
 <!-- Peupler manuellement la BDD pour tester la méthode ci dessous -->
 <!-- Méthode pour afficher les valeurs issues de la BDD Liste des entreprises et des employés CF BDD -->
 <!-- Les conditions if et les boucles for sont toujours entre {% %} dans un fichier twig -->
-<!-- Pour concaténer dans un fichier twig on utilise le ~ à la place du . -->
+<!-- Pour concaténer dans un fichier twig on utilise le ~ à la place du . 
+{{ entrerpise.raisonSociale ~ ' (' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}} -->
 
 
 

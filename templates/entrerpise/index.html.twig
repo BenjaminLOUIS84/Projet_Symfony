@@ -19,7 +19,7 @@
         {# {{entrerpise.raisonSociale}}<br> #}
 
         {# Voici comment concaténer en twig pour afficher les autres informations #}
-        {{entrerpise.raisonSociale}}<br>
+        {{ entrerpise.raisonSociale ~ ' (' ~ entreprise.cp ~ ' ' ~ entreprise.ville ~ ')'}}<br>
 
     {% endfor %}
 
