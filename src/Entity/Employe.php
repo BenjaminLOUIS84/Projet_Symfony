@@ -96,6 +96,6 @@ class Employe
     }
 
     public function __toString() { 
-        return $this->nom. " " .$this->prenom."(".$this->dateNaissance." ".$this->dateEmbauche." ".$this->entreprise.")";
+        return $this->nom. " " .$this->prenom." ".$this->entreprise." ";
     }
 }
