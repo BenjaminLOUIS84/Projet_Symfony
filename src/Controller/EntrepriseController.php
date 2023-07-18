@@ -10,7 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;                        // BDD Obtenue g
 
 class EntrerpiseController extends AbstractController           // Permet d'accéder à des méthodes pré-établies dans l'AbstractController
 {                                                        
-    #[Route('/entrerpise', name: 'app_entrerpise')]             // Route représentant l'URL pour la redirection Veiller à ce que tout les name: soient différents
+    #[Route('/entreprise', name: 'app_entreprise')]             // Route représentant l'URL pour la redirection Veiller à ce que tout les name: soient différents
     public function index(EntityManagerInterface $entityManager): Response                   
     {                                                           // BDD EntityManagerInterface $entityManager à renseigner dans la fonction index()
         //                                                         BDD Clique droit->Import class pour importer cette classe dans le contrôlleur
@@ -20,9 +20,9 @@ class EntrerpiseController extends AbstractController           // Permet d'acc�
 
         $entreprises = $entityManager->getRepository(Entreprise::class)->findAll();  // CF BDD Récupérer la liste de toute les entreprises
 
-        return $this->render('entrerpise/index.html.twig', [    // render() Permet de faire le lien entre le controller et la view // Renvoi dans le dossier entreprise, dans le fichier index.html.twig
+        return $this->render('entrepise/index.html.twig', [    // render() Permet de faire le lien entre le controller et la view // Renvoi dans le dossier entreprise, dans le fichier index.html.twig
             
-            // 'controller_name' => 'Entrerpise Controller',       // 'controller_name' est un argument - 'EntrepriseController' est une valeur
+            // 'controller_name' => 'Entreprise Controller',       // 'controller_name' est un argument - 'EntrepriseController' est une valeur
             // 'name' => $name,                                    // CF VAR
             // 'tableau' => $tableau,                              // CF TAB
 
