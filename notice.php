@@ -88,10 +88,10 @@ Cela permet de convertir en chaîne de caractère et cela simplifie le code  -->
 <!-- Autre méthode pour simplifier le code, il faut mettre dans l'index du contrôlleur EntrepriseRepository $entrepriseRepository
 à la place de EntityManagerInterface $entityManager et importer cette classe dans EntrepriseController CF ASTUCE -->
 
-<!-- Utiliser les filtre pour afficher par ordre alphabétique avec la fonction findBy() 
+<!-- Utiliser le filtre pour afficher par ordre alphabétique avec la fonction findBy() 
 (remplacer la fonction findAll() dans le controlleur)-->
 
-<!-- Utiliser les filtre pour afficher les entrprises de Strasbourg avec la fonction findBy() 
+<!-- Utiliser le filtre pour afficher les entrprises de Strasbourg avec la fonction findBy() 
 (remplir le tableau vide [] de la fonction findBy() dans le controlleur)-->
 
 <!-- Pour afficher la liste des employés de l'entrprise DEV COOK   
