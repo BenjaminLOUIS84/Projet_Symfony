@@ -143,7 +143,10 @@ soit dans ce même fichier créer une méthode getDateCreationFr en reprenant le
 soit directement dans le fichier twig avec le filtre |date ("d-m-Y") -->
 
 <!-- Il existe de nombreux filtres à utiliser dans twig! CF twig.symfony.com-->
-<!-- Créer des liens internes -->
+
+<!-- Créer des liens internes et des conditions dans les fichiers show.html.twig-->
+<!-- Calculer l'âge des employés créer une méthode dans Employe.php-->
+
 
 
 

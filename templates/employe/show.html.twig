@@ -11,7 +11,11 @@
     {# Pour récupérer la raison sociale à l'affichage (CF __toString() dans le fichier Entreprise.php) #}
     <h2>{{ employe }}</h2>
     <p>
+        {# Utiliser le filtre | date("d-m-Y")  pour formater la date #}
         Date de naissance : {{employe.dateNaissance | date("d-m-Y")}}<br>
+
+        {# Faire appel à la fonction getAge() pour afficher l'âge #}
+        Age : {{employe.age()}} ans<br>
 
         {# Créer une condition en cas de ville non renseignée #}
         Ville : {% if employe.ville %} {{ employe.ville }}<br> {% else %} Ville non renseignée<br> {% endif %}

@@ -97,10 +97,20 @@ class Employe
 
         return $this;
     }
+
     ////////////////////////////////////////On peut ajouter d'autres fonctions ici//////////////////////// 
     public function __toString() {                  // Pour faciliter l'affichage des autres informations d'une entité
         return $this->nom. " " .$this->prenom. " "; // Les éléments affichés de la liste des employés sont le nom et le prénom
     }                                               // Permet d'afficher le nom et le prénom de le détail d'un employé ET AUSSI d'une entreprise
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////// 
+    public function getAge(): ?string               // Pour calculer l'âge des employés
+    { 
+        $now = new \DateTime();                     // Déclarer une fonction native avec un \ (date du jour)
+        $interval = $this->dateNaissance->diff($now);
+        return $interval->format("%Y");
+    }                                               
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     
     public function getVille(): ?string
