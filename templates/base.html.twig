@@ -32,9 +32,14 @@
             </ul>
         </nav>
 
-        {% block body %}
+        {# Utiliser container (fonctionnalité Bootstrap) #}
+        <main class="container">
+
+            {% block body %}
             {# Mettre en place tout ce qui va changer d'une vue à l'autre #}
-        {% endblock %}
+            {% endblock %}
+
+        </main>
 
         {% block javascripts %}
 
@@ -43,7 +48,7 @@
         
             {# Insérer les fichiers JavaScript dans ce bloc #}
             <script src="{{ asset('js/script.js') }}"></script>
-            
+
         {% endblock %}
 
     </body>
