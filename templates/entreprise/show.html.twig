@@ -28,15 +28,29 @@
 
     {# Créer une condition pour afficher un message quand il y a pas d'employés dans l'entreprise #}
     {% if entreprise.employes | length >0 %}
+        {# Utiliser table (fonctionnalité Bootstrap) #}
+        <table class="table">
 
-        {# On peut afficher la liste des employés grâce à la relation entre les deux entités #}
-        {# Dans Entreprise.php on récupère la collection $employes #}
-        {% for employe in entreprise.employes %}
+            <thead>
+                <tr>
+                    <th>Employés</th>
+                </tr>
+            </thead>
 
-            {# Créer un lien interne pour afficher les infos de l'entreprise depuis le détail de l'employé #}
-            <a href="{{path('show_employe', {'id':employe.id})}}">{{ employe }}</a><br>
+            <tbody>
+                {# On peut afficher la liste des employés grâce à la relation entre les deux entités #}
+                {# Dans Entreprise.php on récupère la collection $employes #}
+                {% for employe in entreprise.employes %}
 
-        {% endfor %}
+                    {# Créer un lien interne pour afficher les infos de l'entreprise depuis le détail de l'employé #}
+                    <tr>
+                        <td><a href="{{path('show_employe', {'id':employe.id})}}">{{ employe }}</a></td>
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+
+        </table>
 
     {% else %}
 
