@@ -14,8 +14,8 @@
         Date de naissance : {{employe.dateNaissance | date("d-m-Y")}}<br>
 
         {# Créer une condition en cas de ville non renseignée #}
-        Ville : {% if employe.ville %} {{ employe.ville }}<br> {% else %} Ville non renseignée {% endif %}
-        
+        Ville : {% if employe.ville %} {{ employe.ville }}<br> {% else %} Ville non renseignée<br> {% endif %}
+
         Date d'embauche : {{employe.dateEmbauche | date("d-m-Y")}}<br>
 
         {# Créer un lien interne pour afficher les infos de l'entreprise depuis le détail de l'employé #}
