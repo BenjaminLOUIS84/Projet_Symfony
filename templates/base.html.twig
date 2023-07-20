@@ -12,13 +12,14 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         
         {% block stylesheets %}
+
             {# Insérer les fichiers CSS dans ce bloc #}
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
         {% endblock %}
 
-        {% block javascripts %}
-            {# Insérer les fichiers JavaScript dans ce bloc #}
-        {% endblock %}
     </head>
+
     <body>
         {# Créer une barre de navigation pour basculer d'une page (Liste des entreprises) à l'autre (Liste des employés) #}
         <nav>
@@ -32,6 +33,10 @@
             {# Mettre en place tout ce qui va changer d'une vue à l'autre #}
         {% endblock %}
 
+        {% block javascripts %}
+            {# Insérer les fichiers JavaScript dans ce bloc #}
+            <script src="{{ asset('js/script.js') }}"></script>
+        {% endblock %}
 
     </body>
 </html>

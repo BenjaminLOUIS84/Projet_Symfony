@@ -147,6 +147,18 @@ soit directement dans le fichier twig avec le filtre |date ("d-m-Y") -->
 <!-- Créer des liens internes et des conditions dans les fichiers show.html.twig-->
 <!-- Calculer l'âge des employés créer une méthode dans Employe.php-->
 
+<!-- Créer des méthodes dans les entités et faire appel à celles-ci dans les fichiers twig -->
+
+<!-- METTRE DU CSS DANS LE PROJET -->
+
+<!-- Dans public créer un dossier css, img et js 
+Créer un fichier style.css
+Créer le lien:  <link rel="stylesheet" href="{{ asset('css/style.css') }}"> dans le fichier base.html.twig
+asset() fait référence au dossier public-->
+
+<!-- Même méthode pour lier un fichier js
+<script src="{{ asset('js/script.js') }}"></script> -->
+
 
 
 
