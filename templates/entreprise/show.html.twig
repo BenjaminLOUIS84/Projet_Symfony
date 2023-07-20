@@ -22,7 +22,26 @@
 
         {# OU mettre un filtre directement dans le fichier twig #}
         Date de création : {{ entreprise.dateCreation | date("d-m-Y")}}
-
     </p>
+
+    <h3>Liste des salariés</h3>
+
+    {# Créer une condition pour afficher un message quand il y a pas d'employés dans l'entreprise #}
+    {% if entreprise.employes | length >0 %}
+
+        {# On peut afficher la liste des employés grâce à la relation entre les deux entités #}
+        {# Dans Entreprise.php on récupère la collection $employes #}
+        {% for employe in entreprise.employes %}
+
+            {# Créer un lien interne pour afficher les infos de l'entreprise depuis le détail de l'employé #}
+            <a href="{{path('show_employe', {'id':employe.id})}}">{{ employe }}</a><br>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>Aucun salarié dans l'entreprise</p>
+
+    {% endif %}    
 
 {% endblock %}
