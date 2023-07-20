@@ -12,7 +12,10 @@
     <h2>{{ employe }}</h2>
     <p>
         Date de naissance : {{employe.dateNaissance | date("d-m-Y")}}<br>
-        Commune de naissance : {{ employe.ville }}<br>
+
+        {# Créer une condition en cas de ville non renseignée #}
+        Ville : {% if employe.ville %} {{ employe.ville }}<br> {% else %} Ville non renseignée {% endif %}
+        
         Date d'embauche : {{employe.dateEmbauche | date("d-m-Y")}}<br>
 
         {# Créer un lien interne pour afficher les infos de l'entreprise depuis le détail de l'employé #}
