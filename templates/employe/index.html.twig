@@ -8,13 +8,16 @@
 
     <h1>Liste des Employés</h1>
 
+    
     {% for employe in employes %}
+
         {# Pour afficher la liste des employés de l'entreprise DEV COOK il suffit de rajouter {{ employe.entreprise.raisonSociale }} #}
         {# {{ employe }}  {{ employe.entreprise.raisonSociale }} <br> #}
 
+       
         {# Pour juste afficher le nom et le prénom de la liste des employés et rendre ces éléments clickables #}
         <a href="{{ path ('show_employe', {id: employe.id}) }}">{{ employe }}</a><br>
-
+        
     {% endfor %}
 
 {% endblock %}
