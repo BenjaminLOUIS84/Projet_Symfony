@@ -186,22 +186,15 @@ On peut un formulaire qui n'a pas de rapport avec l'Entité -->
 Ensuite il faut créer une fonction dans le controlleur et une vue pour utiliser le formulaire
  
 Enfin créer dans le fichier base un accès vers le formulaire
-<a href="{{ path ('new_entreprise') }}">Ajouter une entreprise</a> -->
+<a href="{{ path ('new_entreprise') }}">Ajouter une entreprise</a> 
+ATTENTION pour que cela fonctionne dans le controlleur il faut mettre la fonction new avant la fonction show-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- Procéder de la même manière pour les employés -->
+ 
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
 

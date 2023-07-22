@@ -25,6 +25,23 @@ class EmployeController extends AbstractController
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // FONCTION POUR AFFICHER UN FORMULAIRE POUR LES EMPLOYES
+
+    #[Route('/entreprise/new', name: 'new_entreprise')]         // Reprendre la route en ajoutant /new à l'URL et en changeant le nom du name
+
+    public function new(Request $request): Response             // Créer une fonction new() dans le controller pour créer le formulaire dédié aux entreprises 
+
+    {
+        $entreprise = new Entreprise();                         // Après avoir importé la classe Request Déclarer une nouvelle entrprise
+
+        $form = $this->createForm(EntrepriseType :: class, $entreprise);  // Créer un nouveau formulaire avec la méthode createForm() et importer le classe EntrepriseType
+
+        return $this->render('entreprise/new.html.twig', [      // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier entreprise)
+            'formAddEntreprise' => $form
+        ]);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // FONCTION POUR AFFICHER LE DETAIL D'UN EMPLOYE
 
     #[Route('/employe/{id}', name: 'show_employe')]       // Reprendre la route en ajoutant /{id} à l'URL et en changeant le nom du name

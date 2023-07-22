@@ -2,11 +2,12 @@
 
 namespace App\Controller;                                       // Grâce à la commande Symfony le contrôlleur se créer automatiquement
 
-use App\Entity\Entreprise;                                      // BDD Obtenue grâce au click droit import class
-use App\Form\EntrepriseType;
+use App\Form\EntrepriseType;                                    // BDD Obtenue grâce au click droit import class
+use Symfony\Component\HttpFoundation\Request;                   // BDD Obtenue grâce au click droit import class
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Entreprise;                                      // BDD Obtenue grâce au click droit import class
 use App\Repository\EntrepriseRepository;                        // BDD Obtenue grâce au click droit import class
 use Doctrine\ORM\EntityManagerInterface;                        // BDD Obtenue grâce au click droit import class
 
@@ -51,6 +52,23 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
     //              BDD Afficher les valeurs de la base de données à savoir la liste des entreprises et des employés (doctrine fait le lien entre la BDD et le projet)
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // FONCTION POUR AFFICHER UN FORMULAIRE POUR LES ENTREPRISES
+
+    #[Route('/entreprise/new', name: 'new_entreprise')]         // Reprendre la route en ajoutant /new à l'URL et en changeant le nom du name
+
+    public function new(Request $request): Response             // Créer une fonction new() dans le controller pour créer le formulaire dédié aux entreprises 
+
+    {
+        $entreprise = new Entreprise();                         // Après avoir importé la classe Request Déclarer une nouvelle entrprise
+
+        $form = $this->createForm(EntrepriseType :: class, $entreprise);  // Créer un nouveau formulaire avec la méthode createForm() et importer le classe EntrepriseType
+
+        return $this->render('entreprise/new.html.twig', [      // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier entreprise)
+            'formAddEntreprise' => $form
+        ]);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // FONCTION POUR AFFICHER LE DETAIL D'UNE ENTREPRISE
 
     #[Route('/entreprise/{id}', name: 'show_entreprise')]        // Reprendre la route en ajoutant /{id} à l'URL et en changeant le nom du name
@@ -62,23 +80,5 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
             'entreprise' => $entreprise
         ]);
     }
-
-     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // FONCTION POUR AFFICHER LE DETAIL D'UNE ENTREPRISE
-
-    #[Route('/entreprise/new', name: 'new_entreprise')]         // Reprendre la route en ajoutant /new à l'URL et en changeant le nom du name
-
-    public function new(Request $request): Response             // Créer une fonction show() dans le controller pour afficher le détail d'une entreprise 
-
-    {
-        $entreprise = new Entreprise();                         // Déclarer une nouvelle entrprise
-
-        $form = $this->createForm(EntrepriseType :: class, $entreprise);  // Créer un nouveau formulaire avec la méthode createForm() et importer le classe EntrepriseType
-
-        return $this->render('entreprise/new.html.twig', [            // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier entreprise)
-            'formAddEntreprise' => $form
-        ]);
-    }
-
 
 }
