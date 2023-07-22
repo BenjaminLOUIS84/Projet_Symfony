@@ -61,6 +61,5 @@ class EntrepriseController extends AbstractController           // Permet d'accÃ
             'entreprise' => $entreprise
         ]);
     }
-    
 
 }
