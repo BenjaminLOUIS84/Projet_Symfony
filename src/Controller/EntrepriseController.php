@@ -2,11 +2,12 @@
 
 namespace App\Controller;                                       // Grâce à la commande Symfony le contrôlleur se créer automatiquement
 
-use App\Repository\EntrepriseRepository;                        // BDD Obtenue grâce au click droit import class
+use App\Entity\Entreprise;                                      // BDD Obtenue grâce au click droit import class
+use App\Form\EntrepriseType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Entity\Entreprise;                                      // BDD Obtenue grâce au click droit import class
+use App\Repository\EntrepriseRepository;                        // BDD Obtenue grâce au click droit import class
 use Doctrine\ORM\EntityManagerInterface;                        // BDD Obtenue grâce au click droit import class
 
 class EntrepriseController extends AbstractController           // Permet d'accéder à des méthodes pré-établies dans l'AbstractController
@@ -52,14 +53,32 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // FONCTION POUR AFFICHER LE DETAIL D'UNE ENTREPRISE
 
-    #[Route('/entreprise/{id}', name: 'show_entreprise')]       // Reprendre la route en ajoutant /{id} à l'URL et en changeant le nom du name
+    #[Route('/entreprise/{id}', name: 'show_entreprise')]        // Reprendre la route en ajoutant /{id} à l'URL et en changeant le nom du name
 
     public function show(Entreprise $entreprise): Response       // Créer une fonction show() dans le controller pour afficher le détail d'une entreprise 
 
     {
-        return $this->render('entreprise/show.html.twig', [     // Pour faire le lien entre le controller et la vue show.html.twig (il faut donc la créer dans le dossier entreprise)
+        return $this->render('entreprise/show.html.twig', [      // Pour faire le lien entre le controller et la vue show.html.twig (il faut donc la créer dans le dossier entreprise)
             'entreprise' => $entreprise
         ]);
     }
+
+     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // FONCTION POUR AFFICHER LE DETAIL D'UNE ENTREPRISE
+
+    #[Route('/entreprise/new', name: 'new_entreprise')]         // Reprendre la route en ajoutant /new à l'URL et en changeant le nom du name
+
+    public function new(Request $request): Response             // Créer une fonction show() dans le controller pour afficher le détail d'une entreprise 
+
+    {
+        $entreprise = new Entreprise();                         // Déclarer une nouvelle entrprise
+
+        $form = $this->createForm(EntrepriseType :: class, $entreprise);  // Déclarer un nouveau formulaire et importer le classe EntrepriseType
+
+        return $this->render('entreprise/new.html.twig', [            // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier entreprise)
+            'form' => $form
+        ]);
+    }
+
 
 }
