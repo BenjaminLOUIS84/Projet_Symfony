@@ -185,7 +185,9 @@ On peut un formulaire qui n'a pas de rapport avec l'Entité -->
 
 Ensuite il faut créer une fonction dans le controlleur et une vue pour utiliser le formulaire
  
-Enfin créer dans la liste des employés un accès vers le formulaire-->
+Enfin créer dans le fichier base un accès vers le formulaire
+<a href="{{ path ('new_entreprise') }}">Ajouter une entreprise</a> -->
+
 
 
 

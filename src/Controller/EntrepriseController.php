@@ -73,10 +73,10 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
     {
         $entreprise = new Entreprise();                         // Déclarer une nouvelle entrprise
 
-        $form = $this->createForm(EntrepriseType :: class, $entreprise);  // Déclarer un nouveau formulaire et importer le classe EntrepriseType
+        $form = $this->createForm(EntrepriseType :: class, $entreprise);  // Créer un nouveau formulaire avec la méthode createForm() et importer le classe EntrepriseType
 
         return $this->render('entreprise/new.html.twig', [            // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier entreprise)
-            'form' => $form
+            'formAddEntreprise' => $form
         ]);
     }
 
