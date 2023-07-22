@@ -178,8 +178,8 @@ https://getbootstrap.com/
 <!--Dans la console écrire symfony console make:form  -->
 
 <!-- Pour le nom opter pour EmployeType (ajouter à la fin du nom de l'entité Type)
-On ajoute ensuite de nom de l'entité avec laquelle le formulaire sera liéE
-On peut un formulaire qui n'a pas de rapport avec l'Entité -->
+On ajoute ensuite de nom de l'entité avec laquelle le formulaire sera liée
+On peut créer un formulaire qui n'a pas de rapport avec l'Entité -->
 
 <!-- Lorsque l'on créer un formulaire via la console un dossier Form est créer avec à l'intérieur un fichier.php
 

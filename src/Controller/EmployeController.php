@@ -36,9 +36,9 @@ class EmployeController extends AbstractController
     {
         $employe = new Employe();                               // Après avoir importé la classe Request Déclarer un nouvel employé
 
-        $form = $this->createForm(EmployeType :: class, $employe);  // Créer un nouveau formulaire avec la méthode createForm() et importer le classe EntrepriseType
+        $form = $this->createForm(EmployeType :: class, $employe);  // Créer un nouveau formulaire avec la méthode createForm() et importer le classe EmployeType
 
-        return $this->render('employe/new.html.twig', [         // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier entreprise)
+        return $this->render('employe/new.html.twig', [         // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier employe)
             'formAddEmploye' => $form
         ]);
     }
