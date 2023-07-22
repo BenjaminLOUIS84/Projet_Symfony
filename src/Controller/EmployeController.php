@@ -3,8 +3,10 @@
 namespace App\Controller;   // CF Commentaires de EntrepriseController
 
 use App\Entity\Employe;
+use App\Form\EmployeType;
 use App\Repository\EmployeRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,17 +29,17 @@ class EmployeController extends AbstractController
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // FONCTION POUR AFFICHER UN FORMULAIRE POUR LES EMPLOYES
 
-    #[Route('/entreprise/new', name: 'new_entreprise')]         // Reprendre la route en ajoutant /new à l'URL et en changeant le nom du name
+    #[Route('/employe/new', name: 'new_employe')]               // Reprendre la route en ajoutant /new à l'URL et en changeant le nom du name
 
-    public function new(Request $request): Response             // Créer une fonction new() dans le controller pour créer le formulaire dédié aux entreprises 
+    public function new(Request $request): Response             // Créer une fonction new() dans le controller pour créer le formulaire dédié aux employes 
 
     {
-        $entreprise = new Entreprise();                         // Après avoir importé la classe Request Déclarer une nouvelle entrprise
+        $employe = new Employe();                               // Après avoir importé la classe Request Déclarer un nouvel employé
 
-        $form = $this->createForm(EntrepriseType :: class, $entreprise);  // Créer un nouveau formulaire avec la méthode createForm() et importer le classe EntrepriseType
+        $form = $this->createForm(EmployeType :: class, $employe);  // Créer un nouveau formulaire avec la méthode createForm() et importer le classe EntrepriseType
 
-        return $this->render('entreprise/new.html.twig', [      // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier entreprise)
-            'formAddEntreprise' => $form
+        return $this->render('employe/new.html.twig', [         // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier entreprise)
+            'formAddEmploye' => $form
         ]);
     }
 
