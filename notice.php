@@ -198,14 +198,24 @@ $builder
     ->add('prenom', TextType::class)
     ->add('dateNaissance', DateType::class)
     ->add('dateEmbauche' ,DateType::class)
-    ->add('ville', TextType::class)              
+    ->add('ville', TextType::class)
+
     ->add('entreprise', Entity::class, [
-        'class' => Entreprise::class, 'choice_label' => 'displayName']);   ATTENTION à EntityType cette classe à besoin d'un tableau d'arguments pour fonctionner         
+    'class' => Entreprise::class, 'choice_label' => 'displayName']);  
+    
+    ATTENTION à EntityType cette classe à besoin d'un tableau d'arguments pour fonctionner         
 
   Cela permet à ceux ci de mieux filtrer les données en entrée-->
 <!-- Ajouter directement un bouton d'aujout ->add('valider', SubmitType::class)  -->
-<!--  -->
-<!--  -->
+<!-- Améliorer le design avec BootStrap -->
+
+<!--Gérer le traitement du formulaire en BDD avec persist() et flush()  -->
+<!-- CF Commentaires dans le controlleur des entreprises -->
+
+<!-- Copier dans la fonction new() après $request de EntrepriseController EntityManagerInterface $entityManager et importer la classe  -->
+<!-- $entityManager->persist($entreprise); & $entityManager->flush();
+Pour Mettre la nouvelle entreprise dans la BDD-->
+
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
 

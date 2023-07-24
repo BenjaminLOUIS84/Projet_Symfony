@@ -56,12 +56,28 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
 
     #[Route('/entreprise/new', name: 'new_entreprise')]         // Reprendre la route en ajoutant /new à l'URL et en changeant le nom du name
 
-    public function new(Request $request): Response             // Créer une fonction new() dans le controller pour créer le formulaire dédié aux entreprises 
+    public function new(Request $request, EntityManagerInterface $entityManager): Response // Créer une fonction new() dans le controller pour créer le formulaire dédié aux entreprises 
 
     {
         $entreprise = new Entreprise();                         // Après avoir importé la classe Request Déclarer une nouvelle entrprise
 
         $form = $this->createForm(EntrepriseType :: class, $entreprise);  // Créer un nouveau formulaire avec la méthode createForm() et importer le classe EntrepriseType
+
+        //////////////////////////////////////////////////////////////////////////
+        //                                                                  GERER LE TRAITEMENT EN BDD
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {         // Si le formulaire soumis est valide alors
+            
+            $entreprise = $form->getData();                     // Récupérer les informations de la nouvelle entreprise (le produit)
+
+            $entityManager->persist($entreprise);               // Dire à Doctrine que je veux sauvegarder la nouvelle entreprise           
+            
+            $entityManager->flush();                            // Mettre la nouvelle entreprise dans la BDD
+
+            return $this->redirectToRoute('app_entreprise');    // Rediriger vers la liste des entreprises
+        }
+
+        //////////////////////////////////////////////////////////////////////////
 
         return $this->render('entreprise/new.html.twig', [      // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier entreprise)
             'formAddEntreprise' => $form

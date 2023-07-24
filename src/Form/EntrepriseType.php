@@ -16,11 +16,12 @@ class EntrepriseType extends AbstractType
     {
         $builder
             ->add('raisonSociale', TextType::class)                 // Définir les types de champs et importer les classes
-            ->add('dateCreation', DateType::class)
+            ->add('dateCreation', DateType::class)                  // CF Propriétés BootStrap dans l'entité Employe
             ->add('adresse', TextType::class)
             ->add('cp', TextType::class)                        
             ->add('ville', TextType::class)
-            ->add('valider', SubmitType::class)                     // Ajouter directement le bouton submit ici
+            ->add('valider', SubmitType::class, [                   // Ajouter directement le bouton submit ici
+            'attr' =>['class' => 'btn btn-success']])               // Ajouter après class ['attr' =>['class' =>'btn btn-succes']] Pour améliorer le bouton
         ;
     }
 
