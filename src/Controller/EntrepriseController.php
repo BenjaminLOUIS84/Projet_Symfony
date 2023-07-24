@@ -52,7 +52,23 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
     //              BDD Afficher les valeurs de la base de données à savoir la liste des entreprises et des employés (doctrine fait le lien entre la BDD et le projet)
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // FONCTION POUR AFFICHER UN FORMULAIRE POUR LES ENTREPRISES
+    // FONCTION POUR AFFICHER UN BOUTON POUR SUPPRIMER UN ENTREPRISE
+
+    #[Route('/entreprise/{id}/delete', name: 'delete_entreprise')]  // Reprendre la route en ajoutant /{id}/delete à l'URL et en changeant le nom du name (Supprimer une entreprise)
+
+    public function delete(Entreprise $entreprise): Response       // Créer une fonction show() dans le controller pour afficher le détail d'une entreprise 
+
+    {
+        $entityManager->remove($entreprise);                       // Supprime une entreprise de la BDD
+        $entityManager->flush();                       
+
+        return $this->redirectToRoute('app_entreprise');           // Rediriger vers la liste des entreprises
+       
+    }
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // FONCTION POUR AFFICHER UN FORMULAIRE POUR LES ENTREPRISES AJOUTER et EDITER
 
     #[Route('/entreprise/new', name: 'new_entreprise')]         // Reprendre la route en ajoutant /new à l'URL et en changeant le nom du name (Ajouter une entreprise)
     #[Route('/entreprise/{id}/edit', name: 'edit_entreprise')]  // Reprendre la route en ajoutant /{id}/edit à l'URL et en changeant le nom du name (Editer une entreprise)
