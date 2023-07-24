@@ -191,8 +191,18 @@ ATTENTION pour que cela fonctionne dans le controlleur il faut mettre la fonctio
 
 <!-- Procéder de la même manière pour les employés -->
  
-<!--  -->
-<!--  -->
+<!-- Définir le type de champ des inputs dans les fichiers EmplpoyeType.php et EntrepriseType.php et importer les classes
+expl
+$builder
+    ->add('nom',TextType::class)
+    ->add('prenom', TextType::class)
+    ->add('dateNaissance', DateType::class)
+    ->add('dateEmbauche' ,DateType::class)
+    ->add('ville' TextType::class)
+    ->add('entreprise')
+    ;
+  Cela permet à ceux ci de mieux filtrer les données en entrée-->
+<!-- Ajouter directement un bouton d'aujout ->add('valider', SubmitType::class)  -->
 <!--  -->
 <!--  -->
 
