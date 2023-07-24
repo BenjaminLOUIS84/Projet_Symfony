@@ -4,6 +4,13 @@
 
 {% block body %}
 
+    {# Condition pour gérer le titre selon si on créer ou l'on modifie une entreprise #}
+    {% if edit %}
+        <h1>Modifier un entreprise</h1>
+    {% else %}
+        <h1>Ajouter un entreprise</h1>
+    {% endif %}
+
     <h1>Ajouter une entreprise</h1>
 
     {{ form(formAddEntreprise) }}

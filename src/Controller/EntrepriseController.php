@@ -54,12 +54,18 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // FONCTION POUR AFFICHER UN FORMULAIRE POUR LES ENTREPRISES
 
-    #[Route('/entreprise/new', name: 'new_entreprise')]         // Reprendre la route en ajoutant /new à l'URL et en changeant le nom du name
+    #[Route('/entreprise/new', name: 'new_entreprise')]         // Reprendre la route en ajoutant /new à l'URL et en changeant le nom du name (Ajouter une entreprise)
+    #[Route('/entreprise/{id}/edit', name: 'edit_entreprise')]  // Reprendre la route en ajoutant /{id}/edit à l'URL et en changeant le nom du name (Editer une entreprise)
 
-    public function new(Request $request, EntityManagerInterface $entityManager): Response // Créer une fonction new() dans le controller pour créer le formulaire dédié aux entreprises 
+    // public function new(Request $request, EntityManagerInterface $entityManager): Response // Créer une fonction new() dans le controller pour créer le formulaire dédié aux entreprises 
+    
+    public function new_edit(Entreprise $entreprise = null, Request $request, EntityManagerInterface $entityManager): Response // Modifier cette fonction new()pour permet l'ajout ou l'édition d'une entreprise (paramConverter)
 
     {
+    if(!$entreprise){                                           // S'il n'y pas d'entreprise alors créer une nouvelle sinon...reprendre reprendre les informations pour les éditers
+                                                  
         $entreprise = new Entreprise();                         // Après avoir importé la classe Request Déclarer une nouvelle entrprise
+        }
 
         $form = $this->createForm(EntrepriseType :: class, $entreprise);  // Créer un nouveau formulaire avec la méthode createForm() et importer le classe EntrepriseType
 
@@ -68,7 +74,7 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {         // Si le formulaire soumis est valide alors
             
-            $entreprise = $form->getData();                     // Récupérer les informations de la nouvelle entreprise (le produit)
+            $entreprise = $form->getData();                     // Récupérer les informations de la nouvelle entreprise 
             //prepare PDO
             $entityManager->persist($entreprise);               // Dire à Doctrine que je veux sauvegarder la nouvelle entreprise           
             //execute PDO
@@ -80,7 +86,8 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
         //////////////////////////////////////////////////////////////////////////
 
         return $this->render('entreprise/new.html.twig', [      // Pour faire le lien entre le controller et la vue new.html.twig (il faut donc la créer dans le dossier entreprise)
-            'formAddEntreprise' => $form
+            'formAddEntreprise' => $form,
+            'edit' => $entreprise->getId()
         ]);
     }
 

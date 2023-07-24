@@ -3,9 +3,38 @@
 {% block title %}Ajouter un employé{% endblock %}
 
 {% block body %}
+    {# Condition pour gérer le titre selon si on créer ou l'on modifie un employé #}
+    {% if  %}
+        <h1>Modifier un employé</h1>
+    {% else %}
+        <h1>Ajouter un employé</h1>
+    {% endif %}
 
-    <h1>Ajouter un employé</h1>
+    
 
-    {{ form(formAddEmploye) }}
+    {# {{ form(formAddEmploye) }} #}
+
+    {{ form_start(formAddEmploye) }}
+    
+        <div class="row">
+            <div class="col_sm">
+                {{ form_row(formAddEmploye.nom) }}
+            </div>
+            <div class="col_sm">
+                {{ form_row(formAddEmploye.prenom) }}
+            </div>
+            <div class="col_sm">
+                
+            </div>
+            <div class="col_sm">
+                {{ form_row(formAddEmploye.dateEmbauche) }}
+            </div>
+            
+            {{ form_row(formAddEmploye.entreprise) }}
+            {{ form_row(formAddEmploye.ville) }}
+            {{ form_row(formAddEmploye.valider) }}
+        </div>
+    
+    {{ formAddEmploye_end(formAddEmploye) }}
 
 {% endblock %}

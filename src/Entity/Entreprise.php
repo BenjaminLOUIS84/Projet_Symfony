@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\EntrepriseRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+//use ORM\OrderBy;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\EntrepriseRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: EntrepriseRepository::class)]
 class Entreprise
@@ -32,6 +33,7 @@ class Entreprise
     private ?string $ville = null;
 
     #[ORM\OneToMany(mappedBy: 'entreprise', targetEntity: Employe::class, orphanRemoval: true)]
+    // #[OrderBy("//nom:ASC")] Pour gérer le classement des employés de l'entreprise par ordre alphabétique Croissant (Importer la classe OrderBy)
     private Collection $employes;
 
     public function __construct()

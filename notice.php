@@ -216,7 +216,18 @@ $builder
 <!-- $entityManager->persist($entreprise); & $entityManager->flush();
 Pour Mettre la nouvelle entreprise dans la BDD-->
 
+<!-- Gérer la mise en forme des formulaires avec form_row ... CF Fichier new.html.twig
+Pour éditier une entreprise il suffit d'ajouter une deuxième route en modidifiant l'URL et le name: (CF Controlleur Entreprise)
+Il faut ensuite renomer la fonction new() en new_edit() et copier dans celle-ci Entreprise $entreprise = null
+Ajouter une condition if(!$entreprise){}(s'il n'y a pas d'entreprise) alors...reprendre les informations pour éditer celles-ci
+La fonction new() qui pour but de créer une nouvelle entreprise devient new_edit() qui pour but d'éditer une entreprise (si la fonction ne trouve pas d'entreprises, elle en créera une nouvelle)
+Enfin Ajouter un lien derrière chaque entreprises de la liste <a href="{{ path ('EDIT_entreprise', {id: entreprise.id}) }}">MODIFIER</a> dans index.html.twig-->
 
+<!-- Modifier le titre en fonction si on crée ou on édite une entreprise-->
+<!--Dans le return de la fonction new_edit() du controlleur ajouter 'edit' => $entreprise->getId() pour renvoyer une valeur booléene qui servira de référence pour créer la condition
+Ajouter cette condition (ife)  dans la vue du formulaire new-->
+<!-- -->
+<!-- -->
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <!-- EXTENSIONS A INSTALLER -->

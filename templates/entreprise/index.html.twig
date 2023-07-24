@@ -27,7 +27,8 @@
             {# Pour rendre les éléments de la liste cliquable il suffit de mettre ceux-ci dans une balise a, placer lien {{ path ('show_entreprise') }} dans le href  
             et ajouter l'ID pour récupérer l'objet entreprise #}
             
-        <a href="{{ path ('show_entreprise', {id: entreprise.id}) }}">{{ entreprise }}</a><br>
+        <a href="{{ path ('show_entreprise', {id: entreprise.id}) }}">{{ entreprise }}</a>
+        <a class="btn btn-warning" href="{{ path ('edit_entreprise', {id: entreprise.id}) }}">MODIFIER</a><br>
 
     {% endfor %}
 
