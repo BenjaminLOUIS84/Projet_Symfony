@@ -15,12 +15,12 @@ class EntrepriseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('raisonSociale', TextType::class)
+            ->add('raisonSociale', TextType::class)                 // Définir les types de champs et importer les classes
             ->add('dateCreation', DateType::class)
             ->add('adresse', TextType::class)
-            ->add('cp', TextType::class)
+            ->add('cp', TextType::class)                        
             ->add('ville', TextType::class)
-            ->add('valider', SubmitType::class)
+            ->add('valider', SubmitType::class)                     // Ajouter directement le bouton submit ici
         ;
     }
 

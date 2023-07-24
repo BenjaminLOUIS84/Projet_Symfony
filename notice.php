@@ -198,9 +198,10 @@ $builder
     ->add('prenom', TextType::class)
     ->add('dateNaissance', DateType::class)
     ->add('dateEmbauche' ,DateType::class)
-    ->add('ville' TextType::class)
-    ->add('entreprise')
-    ;
+    ->add('ville', TextType::class)              
+    ->add('entreprise', Entity::class, [
+        'class' => Entreprise::class, 'choice_label' => 'displayName']);   ATTENTION à EntityType cette classe à besoin d'un tableau d'arguments pour fonctionner         
+
   Cela permet à ceux ci de mieux filtrer les données en entrée-->
 <!-- Ajouter directement un bouton d'aujout ->add('valider', SubmitType::class)  -->
 <!--  -->

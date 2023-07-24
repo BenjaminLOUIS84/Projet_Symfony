@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Employe;
+use App\Entity\Entreprise;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -16,13 +17,14 @@ class EmployeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom', TextType::class)
+            ->add('nom', TextType::class)                                          // Définir les types de champs et importer les classes
             ->add('prenom', TextType::class)
-            ->add('dateNaissance', DateType::class)
+            ->add('dateNaissance', DateType::class)                                                                     
             ->add('dateEmbauche', DateType::class)
-            ->add('ville', TextType::class)
-            ->add('entreprise', EntityType::class)
-            ->add('valider', SubmitType::class)
+            ->add('ville', TextType::class)                         
+            ->add('entreprise', EntityType::class,  [
+                'class' => Entreprise::class, 'choice_label' => 'displayName'])    // Particlarité ici le type à besoin d'un tableau d'arguments pour fonctionner
+            ->add('valider', SubmitType::class)                                    // Ajouter directement le bouton submit ici
         ;
     }
 
