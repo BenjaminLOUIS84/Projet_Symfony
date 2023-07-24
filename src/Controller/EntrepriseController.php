@@ -69,9 +69,9 @@ class EntrepriseController extends AbstractController           // Permet d'acc�
         if ($form->isSubmitted() && $form->isValid()) {         // Si le formulaire soumis est valide alors
             
             $entreprise = $form->getData();                     // Récupérer les informations de la nouvelle entreprise (le produit)
-
+            //prepare PDO
             $entityManager->persist($entreprise);               // Dire à Doctrine que je veux sauvegarder la nouvelle entreprise           
-            
+            //execute PDO
             $entityManager->flush();                            // Mettre la nouvelle entreprise dans la BDD
 
             return $this->redirectToRoute('app_entreprise');    // Rediriger vers la liste des entreprises
