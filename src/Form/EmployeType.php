@@ -28,7 +28,7 @@ class EmployeType extends AbstractType
             'widget' => 'single_text', 'attr' =>['class' =>'form-control']]) 
             
             ->add('ville', TextType::class, [
-                 
+                'require' =>false                                                       // Rendre la ville facultative
             ])
 
             

@@ -227,7 +227,7 @@ Enfin Ajouter un lien derrière chaque entreprises de la liste <a href="{{ path 
 <!--Dans le return de la fonction new_edit() du controlleur ajouter 'edit' => $entreprise->getId() pour renvoyer une valeur booléene qui servira de référence pour créer la condition
 Ajouter cette condition (ife)  dans la vue du formulaire new-->
 <!-- -->
-<!-- -->
+<!--required => false dans EmployeType (champs Ville du formulaire) pour rendre la ville facultative -->
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <!-- EXTENSIONS A INSTALLER -->
