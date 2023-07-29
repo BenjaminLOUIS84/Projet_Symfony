@@ -14,7 +14,7 @@ Dans le bios tapez php -v -->
 
 <!-- Créer un dossier dans Laragon ouvrir le dossier avec VSC et ouvrir la consôle
 Veiller à avoir le bon chemin PS C:\laragon\www\symfony\Projet> pour éxécuter la commande ci-dessous 
-Taper dans la consôle après le > symfony new NomDuProjet -- webapp (pour générer le projet-->
+Taper dans la consôle après le > symfony new NomDuProjet --webapp (pour générer le projet-->
 
 <!-- Astuces pour utiliser la consôle efficacement :
 cd Projet permet de changer la direction du chemin d'accès PS C:\laragon\www\symfony> ... ajouter le fichier suivant et afficher PS C:\laragon\www\symfony\Projet>
